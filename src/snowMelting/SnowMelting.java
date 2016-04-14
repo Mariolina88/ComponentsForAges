@@ -65,9 +65,13 @@ public class SnowMelting {
 
 
 	@Description("the skyview factor value, read from the map")
+	@In
+	@Unit("-")
 	double skyview;
 	
 	@Description("The double value of the  EI, once read from the map")
+	@In
+	@Unit("W/m2")
 	double EI;
 
 	@Description("It is possibile to chose between 3 different models to compute the melting: "

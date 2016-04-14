@@ -53,7 +53,7 @@ public class Lwrb {
 
 	@Description("Humidity input value") 
 	@Unit("%")
-	public double humidity;
+	public double relative_humidity;
 	
 	@Description("skyview factor input value") 
 	@Unit("-")
@@ -133,7 +133,7 @@ public class Lwrb {
 	public void process() throws Exception { 
 			
 		/**Input data reading*/
-		if (Double.isNaN(humidity)) humidity= pRH;
+		if (Double.isNaN(relative_humidity)) relative_humidity= pRH;
 		if (Double.isNaN(clearnessIndex )) clearnessIndex = 1;
 		
 		/**Computation of the downwelling, upwelling and longwave:
@@ -142,7 +142,7 @@ public class Lwrb {
 		upwelling=(Double.isNaN(soilTemperature))? Double.NaN:computeUpwelling(soilTemperature);
 		
 		downwellingALLSKY=(Double.isNaN(airTemperature))? Double.NaN:
-			computeDownwelling(model,airTemperature,humidity/100, clearnessIndex, upwelling, skyview);
+			computeDownwelling(model,airTemperature,relative_humidity/100, clearnessIndex, upwelling, skyview);
 
 		longwave=downwellingALLSKY+upwelling;
 

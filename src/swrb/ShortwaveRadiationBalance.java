@@ -87,7 +87,7 @@ public class ShortwaveRadiationBalance {
 	@Description("Default relative humidity value")
 	public double pRH = 0.7;
 
-	@Description(" For aerosol attenuation (5 < vis < 180 Km) [km].")
+	@Description(" Visibility depending on aerosol attenuation (5 < vis < 180 Km) [km].")
 	@In
 	@Unit ("km")
 	public double pVisibility;
