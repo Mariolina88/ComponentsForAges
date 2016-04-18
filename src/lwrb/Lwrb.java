@@ -119,10 +119,6 @@ public class Lwrb {
 	@Unit("W/m2")
 	double upwelling;
 
-	@Description("The total longwave radiation")
-	@Out
-	@Unit("W/m2")
-	double longwave;
 
 	/**
 	 * Process.
@@ -144,7 +140,6 @@ public class Lwrb {
 		downwellingALLSKY=(Double.isNaN(airTemperature))? Double.NaN:
 			computeDownwelling(model,airTemperature,relative_humidity/100, clearnessIndex, upwelling, skyview);
 
-		longwave=downwellingALLSKY+upwelling;
 
 	}
 	
