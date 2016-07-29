@@ -211,7 +211,9 @@ private double computeE0(DateTime date) {
  * @return the double value of the hour angle
  */
 private double getHourAngle(DateTime date, double latitude) {
-	int day = date.getDayOfYear();	
+	int day = date.getDayOfYear();
+	
+	// check this part, if it is daily I put the 12:00 pm as hour
 	hour=(double)date.getMillisOfDay() / (1000 * 60 * 60);
 
 	// (360 / 365.25) * (day - 79.436) is the number of the day 
